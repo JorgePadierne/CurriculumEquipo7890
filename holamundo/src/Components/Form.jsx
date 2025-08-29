@@ -46,6 +46,22 @@ function Form() {
         })}
       />
       {errors.user && <span>{errors.user.message}</span>}
+      <label htmlFor="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        {...register("email", {
+          required: {
+            value: true,
+            message: "Email is required",
+          },
+          pattern: {
+            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+            message: "Invalid email address",
+          },
+        })}
+      />
+      {errors.email && <span>{errors.email.message}</span>}
       <label htmlFor="password">Password</label>
       <input
         id="password"
