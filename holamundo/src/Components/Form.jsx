@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function Form() {
+  const [usuarios, setUsuarios] = useState([]);
   const MiAxios = axios.create({
     baseURL: "http://localhost:5150",
     timeout: 10000,
@@ -16,7 +17,19 @@ function Form() {
     formState: { errors },
     watch,
   } = useForm();
+  const fetchData = async () => {
+    try {
+      const response = await MiAxios.get("/buscar");
+      setUsuarios(response.data);
+    } catch (error) {
+      console.error(
+        "Error en la petición:",
+        error.response?.data || error.message
+      );
+    }
+  };
   const onSubmit = handleSubmit(async (data) => {
+    fetchData();
     const { password2, ...filteredData } = data;
     try {
       const req = await MiAxios.post("/agregar", filteredData);
@@ -101,6 +114,7 @@ function Form() {
 
         <button type="submit">Send</button>
       </form>
+      <h3>{usuarios}</h3>
     </>
   );
 }

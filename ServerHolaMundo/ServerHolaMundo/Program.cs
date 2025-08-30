@@ -3,12 +3,12 @@ using ServerHolaMundo.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuración de CORS
+// Configuraciï¿½n de CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("PermitirTodo", policy =>
+    options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.AllowAnyOrigin()
+        policy.WithOrigins("https://localhost:5173")
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
