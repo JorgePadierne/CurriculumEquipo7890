@@ -26,20 +26,7 @@ function Form() {
       );
     }
   });
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await MiAxios.get("/api/users");
-        console.log(response.data);
-      } catch (error) {
-        console.error(
-          "Error fetching users:",
-          error.response?.data || error.message
-        );
-      }
-    };
-    fetchData();
-  }, []);
+  
   return (
     <>
       <form className="form" onSubmit={onSubmit}>
@@ -112,9 +99,6 @@ function Form() {
 
         <button type="submit">Send</button>
       </form>
-      <section>
-        <h2>Users</h2>
-      </section>
     </>
   );
 }
