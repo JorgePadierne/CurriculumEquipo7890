@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\models\\usuarioslogcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\models\\usuarioslogcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,24 +34,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "ServerHolaMundo\\Models\\Usuario.cs",
               "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Models\\Usuario.cs",
               "RelativeToolTip": "ServerHolaMundo\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-30T08:13:24.23Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\.gitignore",
               "RelativeDocumentMoniker": "ServerHolaMundo\\.gitignore",
@@ -70,25 +71,27 @@
               "RelativeDocumentMoniker": "ServerHolaMundo\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "ServerHolaMundo\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T08:14:47.542Z"
+              "WhenOpened": "2025-08-30T08:14:47.542Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Program.cs",
               "RelativeDocumentMoniker": "ServerHolaMundo\\Program.cs",
               "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Program.cs",
               "RelativeToolTip": "ServerHolaMundo\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T08:03:27.253Z"
+              "WhenOpened": "2025-08-30T08:03:27.253Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\appsettings.json",
               "RelativeDocumentMoniker": "ServerHolaMundo\\appsettings.json",
@@ -96,11 +99,12 @@
               "RelativeToolTip": "ServerHolaMundo\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-30T08:01:57.667Z"
+              "WhenOpened": "2025-08-30T08:01:57.667Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "UsuariosLogContext.cs",
               "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Models\\UsuariosLogContext.cs",
               "RelativeDocumentMoniker": "ServerHolaMundo\\Models\\UsuariosLogContext.cs",
@@ -108,7 +112,8 @@
               "RelativeToolTip": "ServerHolaMundo\\Models\\UsuariosLogContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T08:01:39.992Z"
+              "WhenOpened": "2025-08-30T08:01:39.992Z",
+              "EditorCaption": ""
             }
           ]
         }

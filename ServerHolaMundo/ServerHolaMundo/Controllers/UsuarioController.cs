@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ServerHolaMundo.Controllers
 {
     [ApiController]
-  
     public class UsuarioController : ControllerBase
     {
         private readonly Models.UsuariosLogContext _context;
@@ -11,7 +11,7 @@ namespace ServerHolaMundo.Controllers
         {
             _context = context;
         }
-        [HttpPost("/agregar")]
+        [HttpPost("agregar")]
         public IActionResult CrearUsuario([FromBody] Models.Usuario usuario)
         {
             _context.Usuarios.Add(usuario);
