@@ -19,7 +19,7 @@ function Form() {
   } = useForm();
   const fetchData = async () => {
     try {
-      const response = await MiAxios.get("/buscar");
+      const response = await MiAxios.get("/api/usuario/buscar");
       setUsuarios(response.data);
     } catch (error) {
       console.error(
@@ -29,10 +29,9 @@ function Form() {
     }
   };
   const onSubmit = handleSubmit(async (data) => {
-    fetchData();
     const { password2, ...filteredData } = data;
     try {
-      const req = await MiAxios.post("/agregar", filteredData);
+      const req = await MiAxios.post("/api/usuario/agregar", filteredData);
       console.log(req.data);
     } catch (error) {
       console.error(
