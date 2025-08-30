@@ -28,6 +28,9 @@ function Form() {
       );
     }
   };
+  useEffect(() => {
+    fetchData();
+  }, []);
   const onSubmit = handleSubmit(async (data) => {
     fetchData();
     const { password2, ...filteredData } = data;
@@ -114,14 +117,15 @@ function Form() {
 
         <button type="submit">Send</button>
       </form>
-
-      {usuarios.map((usuario) => (
-        <p key={usuario.id}>
-          {usuario.User} - {usuario.Email}
-        </p>
-      ))}
+      {usuarios.map((usuario) => {
+        return (
+          <div>
+            <h2>{usuario.User}</h2>
+            <p>{usuario.Email}</p>
+          </div>
+        );
+      })}
     </>
   );
 }
-
 export default Form;
