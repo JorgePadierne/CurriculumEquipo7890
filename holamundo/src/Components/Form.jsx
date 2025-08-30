@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 function Form() {
   const MiAxios = axios.create({
-    baseURL: "https://localhost:5190",
+    baseURL: "http://localhost:5150",
     timeout: 10000,
     headers: {
       "Content-Type": "application/json",
@@ -19,7 +19,7 @@ function Form() {
   const onSubmit = handleSubmit(async (data) => {
     const { password2, ...filteredData } = data;
     try {
-      const req = await MiAxios.post("/api/usuario/agregar", filteredData);
+      const req = await MiAxios.post("/agregar", filteredData);
       console.log(req.data);
     } catch (error) {
       console.error(
