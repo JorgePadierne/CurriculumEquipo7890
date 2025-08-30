@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-function Usuarios() {
+function Correos() {
   const [textoInput, setTextoInput] = useState("");
   const [usuarios, setUsuarios] = useState("");
 
@@ -16,7 +16,7 @@ function Usuarios() {
   const fetchData = async (textoInput) => {
     try {
       const response = await MiAxios.get(
-        `/api/usuario/buscar?user=${textoInput}`
+        `/api/usuario/buscar@?email=${textoInput}`
       );
       setUsuarios(response.data);
     } catch (error) {
@@ -37,7 +37,7 @@ function Usuarios() {
 
   return (
     <section>
-      <h2>Buscador de usuarios</h2>
+      <h2>Buscar Correos</h2>
       <input
         type="text"
         value={textoInput}
@@ -50,4 +50,4 @@ function Usuarios() {
     </section>
   );
 }
-export default Usuarios;
+export default Correos;
