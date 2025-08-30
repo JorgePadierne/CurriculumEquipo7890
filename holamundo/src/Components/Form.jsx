@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 
 function Form() {
   const MiAxios = axios.create({
-    baseURL: "",
-    timeout: 1000,
-    headers: { "X-Custom-Header": "foobar" },
+    baseURL: "https://localhost:5190",
+    timeout: 10000,
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
   const {
     register,
@@ -17,7 +19,7 @@ function Form() {
   const onSubmit = handleSubmit(async (data) => {
     const { password2, ...filteredData } = data;
     try {
-      const req = await MiAxios.post("/api", filteredData);
+      const req = await MiAxios.post("/api/usuario/agregar", filteredData);
       console.log(req.data);
     } catch (error) {
       console.error(
@@ -26,15 +28,15 @@ function Form() {
       );
     }
   });
-  
+
   return (
     <>
       <form className="form" onSubmit={onSubmit}>
-        <label htmlFor="user">User</label>
+        <label htmlFor="User">User</label>
         <input
-          id="user"
+          id="User"
           type="text"
-          {...register("user", {
+          {...register("User", {
             required: {
               value: true,
               message: "User is required",
@@ -49,28 +51,28 @@ function Form() {
             },
           })}
         />
-        {errors.user && <span>{errors.user.message}</span>}
-        <label htmlFor="email">Email</label>
+        {errors.User && <span>{errors.User.message}</span>}
+        <label htmlFor="Email">Email</label>
         <input
-          id="email"
-          type="email"
-          {...register("email", {
+          id="Email"
+          type="Email"
+          {...register("Email", {
             required: {
               value: true,
               message: "Email is required",
             },
             pattern: {
               value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-              message: "Invalid email address",
+              message: "Invalid Email address",
             },
           })}
         />
-        {errors.email && <span>{errors.email.message}</span>}
-        <label htmlFor="password">Password</label>
+        {errors.Email && <span>{errors.Email.message}</span>}
+        <label htmlFor="Password">Password</label>
         <input
-          id="password"
-          type="password"
-          {...register("password", {
+          id="Password"
+          type="Password"
+          {...register("Password", {
             required: {
               value: true,
               message: "Password is required",
@@ -85,14 +87,14 @@ function Form() {
             },
           })}
         />
-        {errors.password && <span>{errors.password.message}</span>}
+        {errors.Password && <span>{errors.Password.message}</span>}
         <label htmlFor="password2">Confirm Password</label>
         <input
           id="password2"
-          type="password"
+          type="Password"
           {...register("password2", {
             validate: (value) =>
-              value === watch("password") || "Passwords do not match",
+              value === watch("Password") || "Passwords do not match",
           })}
         />
         {errors.password2 && <span>{errors.password2.message}</span>}
