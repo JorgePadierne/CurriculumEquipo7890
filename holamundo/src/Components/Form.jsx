@@ -29,6 +29,7 @@ function Form() {
     }
   };
   const onSubmit = handleSubmit(async (data) => {
+    fetchData();
     const { password2, ...filteredData } = data;
     try {
       const req = await MiAxios.post("/api/usuario/agregar", filteredData);
@@ -113,15 +114,12 @@ function Form() {
 
         <button type="submit">Send</button>
       </form>
-      <h3>
-        {usuarios.map(usuario, () => {
-          return (
-            <p key={usuario.id}>
-              {usuario.User} - {usuario.Email}
-            </p>
-          );
-        })}
-      </h3>
+
+      {usuarios.map((usuario) => (
+        <p key={usuario.id}>
+          {usuario.User} - {usuario.Email}
+        </p>
+      ))}
     </>
   );
 }
