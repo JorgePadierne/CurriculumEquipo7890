@@ -1,9 +1,7 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useEffect, useState } from "react";
 
 function Form() {
-  const [usuarios, setUsuarios] = useState([]);
   const MiAxios = axios.create({
     baseURL: "http://localhost:5150",
     timeout: 10000,
@@ -17,22 +15,7 @@ function Form() {
     formState: { errors },
     watch,
   } = useForm();
-  const fetchData = async () => {
-    try {
-      const response = await MiAxios.get("/api/usuario/buscar");
-      setUsuarios(response.data);
-    } catch (error) {
-      console.error(
-        "Error en la petición:",
-        error.response?.data || error.message
-      );
-    }
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
   const onSubmit = handleSubmit(async (data) => {
-    fetchData();
     const { password2, ...filteredData } = data;
     try {
       const req = await MiAxios.post("/api/usuario/agregar", filteredData);
@@ -117,14 +100,6 @@ function Form() {
 
         <button type="submit">Send</button>
       </form>
-      {usuarios.map((usuario) => {
-        return (
-          <div>
-            <h2>{usuario.User}</h2>
-            <p>{usuario.Email}</p>
-          </div>
-        );
-      })}
     </>
   );
 }
