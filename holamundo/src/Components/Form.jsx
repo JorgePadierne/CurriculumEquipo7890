@@ -113,7 +113,15 @@ function Form() {
 
         <button type="submit">Send</button>
       </form>
-      <h3>{usuarios}</h3>
+      <h3>
+        {usuarios.map(usuario, () => {
+          return (
+            <p key={usuario.id}>
+              {usuario.User} - {usuario.Email}
+            </p>
+          );
+        })}
+      </h3>
     </>
   );
 }
