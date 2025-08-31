@@ -8,27 +8,27 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("https://localhost:5173")
+        policy.AllowAnyOrigin()
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
 });
-
 // Servicios
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddDbContext<UsuariosLogContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConectionSQL")));
 
+
 var app = builder.Build();
+
+app.UseCors("AllowReactApp");
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
 
 app.UseHttpsRedirection();
-
-app.UseCors("PermitirTodo"); 
 
 app.UseAuthorization();
 
