@@ -18,8 +18,7 @@ function Form() {
   const onSubmit = handleSubmit(async (data) => {
     const { password2, ...filteredData } = data;
     try {
-      const req = await MiAxios.post("/api/usuario/agregar", filteredData);
-      console.log(req.data);
+      await MiAxios.post("/api/usuario/agregar", filteredData);
     } catch (error) {
       console.error(
         "Error en la petición:",

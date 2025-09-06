@@ -16,6 +16,13 @@ span {
   font-size: x-small;
 }
 
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  margin: 5px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -46,6 +53,8 @@ span {
     animation: logo-spin infinite 20s linear;
   }
 }
+
+
 
 .card {
   padding: 2em;
