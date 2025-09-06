@@ -12,30 +12,31 @@ export default function Lista() {
     },
   });
 
+  const fetchData = async () => {
+    try {
+      const response = await MiAxios.get("/ToDoList/Lista/VerTareas");
+      setLista(response.data);
+    } catch (error) {
+      console.error(
+        "Error en la petición:",
+        error.response?.data || error.message
+      );
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await MiAxios.get("/ToDoList/Lista/VerTareas");
-        setLista(response.data);
-      } catch (error) {
-        console.error(
-          "Error en la petición:",
-          error.response?.data || error.message
-        );
-      }
-    };
     fetchData();
-  });
+  }, []);
 
   const onChange = (e) => {
     setTarea(e.target.value);
   };
 
   const onSubmit = async (e) => {
-    console.log(tarea);
     e.preventDefault();
     try {
       await MiAxios.post("/ToDoList/Lista/AgregarTarea", { tarea });
+      fetchData();
     } catch (error) {
       console.error(
         "Error en la petición:",
@@ -46,7 +47,8 @@ export default function Lista() {
 
   const eliminar = async (id) => {
     try {
-      await MiAxios.delete("/ToDoList/Lista/EliminarTarea", { id });
+      await MiAxios.delete(`/ToDoList/Lista/EliminarTarea/${id}`);
+      fetchData();
     } catch (error) {
       console.error(error);
     }
