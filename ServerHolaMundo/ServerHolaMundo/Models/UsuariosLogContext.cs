@@ -6,7 +6,6 @@ namespace ServerHolaMundo.Models;
 
 public partial class UsuariosLogContext : DbContext
 {
-    
     public UsuariosLogContext()
     {
     }
@@ -16,6 +15,8 @@ public partial class UsuariosLogContext : DbContext
     {
     }
 
+    public virtual DbSet<ListaTarea> ListaTareas { get; set; }
+
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -24,6 +25,13 @@ public partial class UsuariosLogContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<ListaTarea>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__ListaTar__3214EC07828ED02A");
+
+            entity.Property(e => e.Tarea).HasMaxLength(50);
+        });
+
         modelBuilder.Entity<Usuario>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Usuarios__3214EC075764D8A4");

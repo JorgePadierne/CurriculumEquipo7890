@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ServerHolaMundo.Models;
@@ -21,7 +23,7 @@ namespace ServerHolaMundo.Controllers
             _context.SaveChanges();
             return Ok(usuario);
         }
-       
+
         [HttpGet]
         [Route("Buscar")]
         public IActionResult Buscarusuario([FromQuery] string user)
@@ -37,7 +39,7 @@ namespace ServerHolaMundo.Controllers
         public IActionResult BuscarEmail([FromQuery] string email)
         {
             var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == email);
-                if (email == null)
+            if (email == null)
             {
                 return NotFound("Correo electronico no encontrado");
             }
@@ -59,6 +61,26 @@ namespace ServerHolaMundo.Controllers
             _context.SaveChangesAsync();
 
             return Ok($"Usuario {BuscarUsuario.User} eliminado");
+        }
+        [HttpPut("Actualizar/{id}")]
+        public IActionResult EditarUsuario(int id , [FromBody] UsuarioDelete Usuario )
+        {
+            if (Usuario == null)
+            {
+                return BadRequest("Operacion invalida");
+            }
+            var TareaActualizada = _context.Usuarios.FirstOrDefault(t => t.Id == id);
+            if (TareaActualizada == null)
+            {
+                return NotFound("No se ha encontrado el ID del usuario");    
+            }
+            TareaActualizada.User = Usuario.User;
+            TareaActualizada.Email = Usuario.Email;
+            TareaActualizada.Password = Usuario.Password;
+
+            _context.Update(TareaActualizada);
+            _context.SaveChanges();
+            return Ok("Tarea realizada con exito");
         }
     }
 }
