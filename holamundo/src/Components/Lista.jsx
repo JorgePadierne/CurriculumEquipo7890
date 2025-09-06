@@ -15,7 +15,7 @@ export default function Lista() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await MiAxios.get("/api/usuario/listar");
+        const response = await MiAxios.get("/ToDoList/Lista/VerTareas");
         setLista(response.data);
       } catch (error) {
         console.error(
@@ -35,7 +35,7 @@ export default function Lista() {
     console.log(tarea);
     e.preventDefault();
     try {
-      await MiAxios.post("/api/usuarios/agregar", { tarea });
+      await MiAxios.post("/ToDoList/Lista/AgregarTarea", { tarea });
     } catch (error) {
       console.error(
         "Error en la petición:",
@@ -46,7 +46,7 @@ export default function Lista() {
 
   const eliminar = async (id) => {
     try {
-      await MiAxios.delete("/api/usuario/eliminar", { id });
+      await MiAxios.delete("/ToDoList/Lista/EliminarTarea", { id });
     } catch (error) {
       console.error(error);
     }
