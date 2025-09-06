@@ -68,14 +68,14 @@ export default function Lista() {
     <>
       {lista.map((item) => (
         <div key={item.id}>
-          <h2>item.tarea</h2>
+          <h2>{item.tarea}</h2>
           <span>{item.realizada}</span>
           <button onClick={eliminar(item.id)}>Eliminar</button>
         </div>
       ))}
+
       <form onSubmit={onSubmit} className="form">
         <label htmlFor="tarea">Agregar Tarea</label>
-
         <input
           type="text"
           name="tarea"
