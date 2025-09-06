@@ -22,19 +22,34 @@ export default function App() {
         </NavLink>
       </nav>
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Form />
-              <Usuarios />
-              <Correos />
-            </>
-          }
-        />
-        <Route path="/lista" element={<Lista />} />
-      </Routes>
+      <div className="content">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <div className="content content-form">
+                  <Form />
+                </div>
+                <div className="content content-form">
+                  <Usuarios />
+                </div>
+                <div className="content content-form">
+                  <Correos />
+                </div>
+              </>
+            }
+          />
+          <Route
+            path="/lista"
+            element={
+              <div className="content-tarea">
+                <Lista />
+              </div>
+            }
+          />
+        </Routes>
+      </div>
     </Router>
   );
 }

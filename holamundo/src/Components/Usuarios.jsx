@@ -36,7 +36,7 @@ function Usuarios() {
   };
 
   return (
-    <section>
+    <section className="usuarios">
       <h2>Buscador de usuarios</h2>
       <input
         type="text"

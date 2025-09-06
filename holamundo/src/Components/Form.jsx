@@ -30,10 +30,12 @@ function Form() {
   return (
     <>
       <form className="form" onSubmit={onSubmit}>
+        <h2>Creación de Usuario</h2>
         <label htmlFor="User">User</label>
         <input
           id="User"
           type="text"
+          placeholder="Yasuo123"
           {...register("User", {
             required: {
               value: true,
@@ -54,6 +56,7 @@ function Form() {
         <input
           id="Email"
           type="Email"
+          placeholder="sorieketon@gmail.com"
           {...register("Email", {
             required: {
               value: true,
@@ -70,6 +73,7 @@ function Form() {
         <input
           id="Password"
           type="Password"
+          placeholder="********"
           {...register("Password", {
             required: {
               value: true,
@@ -90,6 +94,7 @@ function Form() {
         <input
           id="password2"
           type="Password"
+          placeholder="********"
           {...register("password2", {
             validate: (value) =>
               value === watch("Password") || "Passwords do not match",

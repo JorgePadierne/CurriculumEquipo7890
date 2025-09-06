@@ -26,7 +26,7 @@ export default function Lista() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  });
 
   const onChange = (e) => {
     setTarea(e.target.value);
@@ -67,17 +67,9 @@ export default function Lista() {
   };
 
   return (
-    <>
-      {lista.map((item) => (
-        <div key={item.id}>
-          <h2>{item.tarea}</h2>
-          <span>{item.realizada}</span>
-          <button onClick={eliminar(item.id)}>Eliminar</button>
-        </div>
-      ))}
-
-      <form onSubmit={onSubmit} className="form">
-        <label htmlFor="tarea">Agregar Tarea</label>
+    <div className="content-lista-tarea">
+      <form onSubmit={onSubmit} className="form content-form form-tarea">
+        <h2>Agregar Tarea</h2>
         <input
           type="text"
           name="tarea"
@@ -87,6 +79,40 @@ export default function Lista() {
         />
         <button type="submit">Add</button>
       </form>
-    </>
+      <section className="lista">
+        {lista.map((item) => (
+          <div key={item.id} className="tarea">
+            <h2>{item.tarea}</h2>
+            <span>{item.realizada}</span>
+            <button onClick={eliminar(item.id)}>Eliminar</button>
+          </div>
+        ))}
+        <div className="tarea">
+          <h2>hola1</h2>
+          <span>hola2</span>
+          <button>hola3</button>
+        </div>
+        <div className="tarea">
+          <h2>hola1</h2>
+          <span>hola2</span>
+          <button>hola3</button>
+        </div>
+        <div className="tarea">
+          <h2>hola1</h2>
+          <span>hola2</span>
+          <button>hola3</button>
+        </div>
+        <div className="tarea">
+          <h2>hola1</h2>
+          <span>hola2</span>
+          <button>hola3</button>
+        </div>
+        <div className="tarea">
+          <h2>hola1</h2>
+          <span>hola2</span>
+          <button>hola3</button>
+        </div>
+      </section>
+    </div>
   );
 }

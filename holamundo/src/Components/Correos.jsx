@@ -36,7 +36,7 @@ function Correos() {
   };
 
   return (
-    <section>
+    <section className="usuarios">
       <h2>Buscar Correos</h2>
       <input
         type="text"
