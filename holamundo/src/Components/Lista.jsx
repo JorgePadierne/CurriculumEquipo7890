@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function Lista() {
   const [lista, setLista] = useState([]);
@@ -12,7 +12,7 @@ export default function Lista() {
     },
   });
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const response = await MiAxios.get("/ToDoList/Lista/VerTareas");
       setLista(response.data);
@@ -22,11 +22,11 @@ export default function Lista() {
         error.response?.data || error.message
       );
     }
-  };
+  }, [MiAxios]);
 
   useEffect(() => {
     fetchData();
-  });
+  }, [fetchData]);
 
   const onChange = (e) => {
     setTarea(e.target.value);
@@ -47,21 +47,8 @@ export default function Lista() {
 
   const eliminar = async (id) => {
     try {
-      await MiAxios.delete(`/ToDoList/Lista/EliminarTarea/${id}`);
+      await MiAxios.delete(`/ToDoList/Lista/Eliminar/${id}`);
       fetchData();
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  const handleEliminar = () => eliminar(item.id);
-
-  const patchData = async (id, realizada, tarea) => {
-    try {
-      await MiAxios.patch("/api/usuarios/actualizar", {
-        id,
-        realizada: true,
-        tarea,
-      });
     } catch (error) {
       console.error(error);
     }
@@ -85,7 +72,7 @@ export default function Lista() {
           <div key={item.id} className="tarea">
             <h2>{item.tarea}</h2>
             <span>{item.realizada}</span>
-            <button onClick={handleEliminar}>Eliminar</button>
+            <button onClick={() => eliminar(item.id)}>Eliminar</button>
           </div>
         ))}
       </section>
