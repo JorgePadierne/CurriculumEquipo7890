@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\controllers\\listacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\controllers\\listacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\models\\usuariodelete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\models\\usuariodelete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,16 +31,8 @@
       "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\models\\usuarioslogcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\serverholamundo.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\serverholamundo.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|solutionrelative:serverholamundo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E43050CF-717E-445D-BD6E-4EE02FE22C11}|ServerHolaMundo\\ServerHolaMundo.csproj|c:\\github\\curriculumequipo7890\\serverholamundo\\serverholamundo\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
@@ -42,37 +46,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "ServerHolaMundo\\Models\\Usuario.cs",
               "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Models\\Usuario.cs",
               "RelativeToolTip": "ServerHolaMundo\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-30T08:13:24.23Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsuarioDelete.cs",
-              "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Models\\UsuarioDelete.cs",
-              "RelativeDocumentMoniker": "ServerHolaMundo\\Models\\UsuarioDelete.cs",
-              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Models\\UsuarioDelete.cs*",
-              "RelativeToolTip": "ServerHolaMundo\\Models\\UsuarioDelete.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ListaController.cs",
+              "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Controllers\\ListaController.cs",
+              "RelativeDocumentMoniker": "ServerHolaMundo\\Controllers\\ListaController.cs",
+              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Controllers\\ListaController.cs",
+              "RelativeToolTip": "ServerHolaMundo\\Controllers\\ListaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T03:40:49.981Z",
+              "WhenOpened": "2025-09-06T00:07:59.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "UsuarioDelete.cs",
+              "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Models\\UsuarioDelete.cs",
+              "RelativeDocumentMoniker": "ServerHolaMundo\\Models\\UsuarioDelete.cs",
+              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Models\\UsuarioDelete.cs",
+              "RelativeToolTip": "ServerHolaMundo\\Models\\UsuarioDelete.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T03:40:49.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ServerHolaMundo.http",
               "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\ServerHolaMundo.http",
               "RelativeDocumentMoniker": "ServerHolaMundo\\ServerHolaMundo.http",
@@ -84,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\.gitignore",
               "RelativeDocumentMoniker": "ServerHolaMundo\\.gitignore",
@@ -96,50 +112,50 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "ServerHolaMundo\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Controllers\\UsuarioController.cs*",
-              "RelativeToolTip": "ServerHolaMundo\\Controllers\\UsuarioController.cs*",
-              "ViewState": "AgIAACcAAAAAAAAAAAAkwDoAAAALAAAAAAAAAA==",
+              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "ServerHolaMundo\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-30T08:14:47.542Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Program.cs",
               "RelativeDocumentMoniker": "ServerHolaMundo\\Program.cs",
               "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Program.cs",
               "RelativeToolTip": "ServerHolaMundo\\Program.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAArwCQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-30T08:03:27.253Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\appsettings.json",
               "RelativeDocumentMoniker": "ServerHolaMundo\\appsettings.json",
               "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\appsettings.json",
               "RelativeToolTip": "ServerHolaMundo\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-08-30T08:01:57.667Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "UsuariosLogContext.cs",
               "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Models\\UsuariosLogContext.cs",
               "RelativeDocumentMoniker": "ServerHolaMundo\\Models\\UsuariosLogContext.cs",
               "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\ServerHolaMundo\\ServerHolaMundo\\Models\\UsuariosLogContext.cs",
               "RelativeToolTip": "ServerHolaMundo\\Models\\UsuariosLogContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-30T08:01:39.992Z"
             }
