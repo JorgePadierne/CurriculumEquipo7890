@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ServerHolaMundo.Models;
 
 namespace ServerHolaMundo.Controllers
 {
     [ApiController]
+    [Route("api/[controller]")]
     public class UsuarioController : ControllerBase
     {
         private readonly Models.UsuariosLogContext _context;
@@ -18,7 +21,7 @@ namespace ServerHolaMundo.Controllers
             _context.SaveChanges();
             return Ok(usuario);
         }
-
+       
         [HttpGet]
         [Route("Buscar")]
         public IActionResult Buscarusuario([FromQuery] string user)
@@ -28,7 +31,7 @@ namespace ServerHolaMundo.Controllers
             {
                 return NotFound("Usuario no encontrado");
             }
-            return Ok(usuario);
+            return Ok($"El correo electronico del usuario {usuario.User} es {usuario.Email}");
         }
         [HttpGet("Buscar@")]
         public IActionResult BuscarEmail([FromQuery] string email)
@@ -38,8 +41,24 @@ namespace ServerHolaMundo.Controllers
             {
                 return NotFound("Correo electronico no encontrado");
             }
-            return Ok(usuario);
+            return Ok($"El usuario {usuario.User} es propietario del correo electronico {usuario.Email}");
         }
-            
+        [HttpDelete("Eliminar")]
+        public IActionResult EliminarUsuario([FromBody] UsuarioDelete delete)
+        {
+            if (string.IsNullOrEmpty(delete.User) || string.IsNullOrEmpty(delete.Password) || string.IsNullOrEmpty(delete.Email))
+            {
+                return BadRequest("Datos invalidos");
+            }
+            var BuscarUsuario = _context.Usuarios.FirstOrDefault(u => u.User == delete.User && u.Email == delete.Email && u.Password == delete.Password);
+            if (BuscarUsuario == null)
+            {
+                return NotFound("Usuario no encontrado");
+            }
+            _context.Usuarios.Remove(BuscarUsuario);
+            _context.SaveChangesAsync();
+
+            return Ok($"Usuario {BuscarUsuario.User} eliminado");
+        }
     }
 }
