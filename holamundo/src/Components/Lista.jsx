@@ -53,6 +53,7 @@ export default function Lista() {
       console.error(error);
     }
   };
+  const handleEliminar = () => eliminar(item.id);
 
   const patchData = async (id, realizada, tarea) => {
     try {
@@ -84,34 +85,9 @@ export default function Lista() {
           <div key={item.id} className="tarea">
             <h2>{item.tarea}</h2>
             <span>{item.realizada}</span>
-            <button onClick={eliminar(item.id)}>Eliminar</button>
+            <button onClick={handleEliminar}>Eliminar</button>
           </div>
         ))}
-        <div className="tarea">
-          <h2>hola1</h2>
-          <span>hola2</span>
-          <button>hola3</button>
-        </div>
-        <div className="tarea">
-          <h2>hola1</h2>
-          <span>hola2</span>
-          <button>hola3</button>
-        </div>
-        <div className="tarea">
-          <h2>hola1</h2>
-          <span>hola2</span>
-          <button>hola3</button>
-        </div>
-        <div className="tarea">
-          <h2>hola1</h2>
-          <span>hola2</span>
-          <button>hola3</button>
-        </div>
-        <div className="tarea">
-          <h2>hola1</h2>
-          <span>hola2</span>
-          <button>hola3</button>
-        </div>
       </section>
     </div>
   );
