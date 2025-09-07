@@ -94,13 +94,12 @@ nav {
 }
 
 .lista {
+  padding-top: 380px;
   display: flex;
+  gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  width: 800px;
+  height: 100vh;
 }
 
 .tarea {
@@ -112,6 +111,7 @@ nav {
   border-radius: 10px;
   margin: 10px 0;
   padding: 10px;
+  max-height: 150px;
 }
 
 .tarea span {
@@ -133,6 +133,10 @@ nav {
 }
 
 .content-lista-tarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
   max-width: 1280px;
   margin: 0 auto;
 }

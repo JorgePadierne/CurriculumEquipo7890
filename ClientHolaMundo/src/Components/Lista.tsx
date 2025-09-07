@@ -49,7 +49,6 @@ export default function Lista() {
     e.preventDefault();
     try {
       await MiAxios.post("/ToDoList/Lista/AgregarTarea", { tarea });
-      fetchData();
     } catch (error) {
       if (axios.isAxiosError(error)) {
         console.error(
@@ -60,15 +59,17 @@ export default function Lista() {
         console.error("Error en la petición:", String(error));
       }
     }
+    fetchData();
+    setTarea("");
   };
 
   const eliminar = async (id: number) => {
     try {
       await MiAxios.delete(`/ToDoList/Lista/Eliminar/${id}`);
-      fetchData();
     } catch (error) {
       console.error(error);
     }
+    fetchData();
   };
 
   return (
