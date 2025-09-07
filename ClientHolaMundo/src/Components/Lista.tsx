@@ -2,6 +2,15 @@ import axios from "axios";
 import { useState, useEffect, useCallback } from "react";
 
 export default function Lista() {
+  type item = {
+    id: number;
+    realizada: boolean;
+    tarea: string;
+  };
+
+  interface InputChangeEvent {
+    target: { value: string };
+  }
   const [lista, setLista] = useState([]);
   const [tarea, setTarea] = useState("");
   const MiAxios = axios.create({
@@ -17,10 +26,14 @@ export default function Lista() {
       const response = await MiAxios.get("/ToDoList/Lista/VerTareas");
       setLista(response.data);
     } catch (error) {
-      console.error(
-        "Error en la petición:",
-        error.response?.data || error.message
-      );
+      if (axios.isAxiosError(error)) {
+        console.error(
+          "Error en la petición:",
+          error.response?.data || error.message
+        );
+      } else {
+        console.error("Error en la petición:", String(error));
+      }
     }
   }, [MiAxios]);
 
@@ -28,24 +41,28 @@ export default function Lista() {
     fetchData();
   }, [fetchData]);
 
-  const onChange = (e) => {
+  const onChange = (e: InputChangeEvent) => {
     setTarea(e.target.value);
   };
 
-  const onSubmit = async (e) => {
+  const onSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
       await MiAxios.post("/ToDoList/Lista/AgregarTarea", { tarea });
       fetchData();
     } catch (error) {
-      console.error(
-        "Error en la petición:",
-        error.response?.data || error.message
-      );
+      if (axios.isAxiosError(error)) {
+        console.error(
+          "Error en la petición:",
+          error.response?.data || error.message
+        );
+      } else {
+        console.error("Error en la petición:", String(error));
+      }
     }
   };
 
-  const eliminar = async (id) => {
+  const eliminar = async (id: number) => {
     try {
       await MiAxios.delete(`/ToDoList/Lista/Eliminar/${id}`);
       fetchData();
@@ -68,7 +85,7 @@ export default function Lista() {
         <button type="submit">Add</button>
       </form>
       <section className="lista">
-        {lista.map((item) => (
+        {lista.map((item: item) => (
           <div key={item.id} className="tarea">
             <h2>{item.tarea}</h2>
             <span>{item.realizada}</span>

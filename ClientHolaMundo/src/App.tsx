@@ -4,10 +4,10 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
-import Form from "./Components/Form";
-import Usuarios from "./Components/Usuarios";
-import Correos from "./Components/Correos";
-import Lista from "./Components/Lista";
+import Form from "./Components/Form.tsx";
+import Usuarios from "./Components/Usuarios.tsx";
+import Correos from "./Components/Correos.tsx";
+import Lista from "./Components/Lista.tsx";
 import "./App.css";
 
 export default function App() {

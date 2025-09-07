@@ -16,14 +16,18 @@ function Form() {
     watch,
   } = useForm();
   const onSubmit = handleSubmit(async (data) => {
-    const { password2, ...filteredData } = data;
+    const filteredData = data;
     try {
       await MiAxios.post("/api/usuario/agregar", filteredData);
     } catch (error) {
-      console.error(
-        "Error en la petición:",
-        error.response?.data || error.message
-      );
+      if (axios.isAxiosError(error)) {
+        console.error(
+          "Error en la petición:",
+          error.response?.data || error.message
+        );
+      } else {
+        console.error("Error en la petición:", String(error));
+      }
     }
   });
 
@@ -51,7 +55,9 @@ function Form() {
             },
           })}
         />
-        {errors.User && <span>{errors.User.message}</span>}
+        {typeof errors.User?.message === "string" && (
+          <span>{errors.User.message}</span>
+        )}
         <label htmlFor="Email">Email</label>
         <input
           id="Email"
@@ -68,7 +74,9 @@ function Form() {
             },
           })}
         />
-        {errors.Email && <span>{errors.Email.message}</span>}
+        {errors.Email && typeof errors.Email.message === "string" && (
+          <span>{errors.Email.message}</span>
+        )}
         <label htmlFor="Password">Password</label>
         <input
           id="Password"
@@ -89,7 +97,9 @@ function Form() {
             },
           })}
         />
-        {errors.Password && <span>{errors.Password.message}</span>}
+        {errors.Password && typeof errors.Password.message === "string" && (
+          <span>{errors.Password.message}</span>
+        )}
         <label htmlFor="password2">Confirm Password</label>
         <input
           id="password2"
@@ -100,7 +110,9 @@ function Form() {
               value === watch("Password") || "Passwords do not match",
           })}
         />
-        {errors.password2 && <span>{errors.password2.message}</span>}
+        {errors.password2 && typeof errors.password2.message === "string" && (
+          <span>{errors.password2.message}</span>
+        )}
 
         <button type="submit">Send</button>
       </form>
