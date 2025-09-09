@@ -1,9 +1,5 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
-import Sing from "./Components/Sign-in";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Create from "./Components/Create.tsx";
 import Lista from "./Components/Lista.tsx";
 import NavBar from "./Components/NavBar.tsx";
 import "./App.css";
@@ -14,15 +10,9 @@ export default function App() {
       <NavBar />
       <div className="main-container">
         <Routes>
-          <Route path="/" element={<Sing />} />
-          <Route
-            path="/lista"
-            element={
-              <div className="content-tarea">
-                <Lista />
-              </div>
-            }
-          />
+          <Route path="/" element={<Create />} />
+          <Route path="/sign-in" />
+          <Route path="/lista" element={<Lista />} />
         </Routes>
       </div>
     </Router>
