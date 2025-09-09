@@ -1,0 +1,76 @@
+[
+  {
+    "ContainingType": "Lista_Tareas.Controllers.UsuarioController",
+    "Method": "AgregarUsuario",
+    "RelativePath": "api/Usuario/agregar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "Lista_Tareas.Models.Usuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Lista_Tareas.Controllers.UsuarioController",
+    "Method": "Entrar",
+    "RelativePath": "api/Usuario/Entrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "Lista_Tareas.Models.Login",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Lista_Tareas.Controllers.ListaController",
+    "Method": "AgregarTarea",
+    "RelativePath": "api2/Lista/AgregarTarea",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recibirTarea",
+        "Type": "Lista_Tareas.Models.Listatarea",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Lista_Tareas.Controllers.ListaController",
+    "Method": "EliminarTarea",
+    "RelativePath": "api2/Lista/EliminarTareas/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Lista_Tareas.Controllers.ListaController",
+    "Method": "DevolverTareas",
+    "RelativePath": "api2/Lista/RecibirTareas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

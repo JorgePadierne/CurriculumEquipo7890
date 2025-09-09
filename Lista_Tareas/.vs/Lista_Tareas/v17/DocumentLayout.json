@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|c:\\github\\curriculumequipo7890\\lista_tareas\\lista_tareas\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|solutionrelative:lista_tareas\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|c:\\github\\curriculumequipo7890\\lista_tareas\\lista_tareas\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|solutionrelative:lista_tareas\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|c:\\github\\curriculumequipo7890\\lista_tareas\\lista_tareas\\controllers\\listacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|solutionrelative:lista_tareas\\controllers\\listacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|c:\\github\\curriculumequipo7890\\lista_tareas\\lista_tareas\\context\\todolistcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|solutionrelative:lista_tareas\\context\\todolistcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|c:\\github\\curriculumequipo7890\\lista_tareas\\lista_tareas\\models\\listatarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|solutionrelative:lista_tareas\\models\\listatarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|c:\\github\\curriculumequipo7890\\lista_tareas\\lista_tareas\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|solutionrelative:lista_tareas\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|c:\\github\\curriculumequipo7890\\lista_tareas\\lista_tareas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|solutionrelative:lista_tareas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|c:\\github\\curriculumequipo7890\\lista_tareas\\lista_tareas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5A78CA8D-636F-4E34-8040-08D8DB3F3101}|Lista_Tareas\\Lista_Tareas.csproj|solutionrelative:lista_tareas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Listatarea.cs",
+              "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Models\\Listatarea.cs",
+              "RelativeDocumentMoniker": "Lista_Tareas\\Models\\Listatarea.cs",
+              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Models\\Listatarea.cs",
+              "RelativeToolTip": "Lista_Tareas\\Models\\Listatarea.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T20:00:07.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ListaController.cs",
+              "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Controllers\\ListaController.cs",
+              "RelativeDocumentMoniker": "Lista_Tareas\\Controllers\\ListaController.cs",
+              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Controllers\\ListaController.cs",
+              "RelativeToolTip": "Lista_Tareas\\Controllers\\ListaController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwC4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T19:47:44.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Models\\Login.cs",
+              "RelativeDocumentMoniker": "Lista_Tareas\\Models\\Login.cs",
+              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Models\\Login.cs",
+              "RelativeToolTip": "Lista_Tareas\\Models\\Login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T18:27:22.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "Lista_Tareas\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "Lista_Tareas\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAIwDQAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T17:35:40.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\appsettings.json",
+              "RelativeDocumentMoniker": "Lista_Tareas\\appsettings.json",
+              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\appsettings.json",
+              "RelativeToolTip": "Lista_Tareas\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-09T17:30:57.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Program.cs",
+              "RelativeDocumentMoniker": "Lista_Tareas\\Program.cs",
+              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Program.cs",
+              "RelativeToolTip": "Lista_Tareas\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T17:30:08.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Lista_Tareas\\Models\\Usuario.cs",
+              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Models\\Usuario.cs",
+              "RelativeToolTip": "Lista_Tareas\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T17:30:01.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ToDoListContext.cs",
+              "DocumentMoniker": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Context\\ToDoListContext.cs",
+              "RelativeDocumentMoniker": "Lista_Tareas\\Context\\ToDoListContext.cs",
+              "ToolTip": "C:\\GitHub\\CurriculumEquipo7890\\Lista_Tareas\\Lista_Tareas\\Context\\ToDoListContext.cs",
+              "RelativeToolTip": "Lista_Tareas\\Context\\ToDoListContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAswBcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T17:29:34.054Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
