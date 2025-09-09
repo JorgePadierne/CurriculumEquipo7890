@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
-import axios from "axios";
-import { Input, Button, Label } from "./ui";
+import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { Input, Button, Label } from "../ui";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function Session() {
   const {
@@ -8,27 +10,34 @@ export default function Session() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const MiAxios = axios.create({
-    baseURL: "http://localhost:5290",
-    timeout: 10000,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const onSubmit = handleSubmit(async (data) => {
+  // Obtener la ruta de donde venía el usuario antes del login
+  const from = location.state?.from?.pathname || "/";
+
+  const logUsers = handleSubmit(async (data) => {
+    setIsLoading(true);
+    setErrorMessage("");
+    
     try {
-      const respuesta = await MiAxios.post("/api/usuario/iniciarsesion", data);
-      if (respuesta.status !== 200) throw new Error("Credenciales inválidas");
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
-        console.error(
-          "Error en la petición:",
-          error.response?.data || error.message
-        );
+      const result = await login(data.Email, data.Password);
+      
+      if (result.success) {
+        // Redirigir a la página de donde venía o a la página principal
+        navigate(from, { replace: true });
       } else {
-        console.error("Error en la petición:", String(error));
+        setErrorMessage(result.message || "Error al iniciar sesión");
       }
+    } catch (error) {
+      console.error("Error en login:", error);
+      setErrorMessage("Error inesperado. Inténtalo de nuevo.");
+    } finally {
+      setIsLoading(false);
     }
   });
 
@@ -42,7 +51,14 @@ export default function Session() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" onSubmit={onSubmit}>
+          <form className="space-y-6" onSubmit={logUsers}>
+            {/* Mostrar mensaje de error si existe */}
+            {errorMessage && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+                {errorMessage}
+              </div>
+            )}
+            
             <div>
               <Label htmlFor="Email">Email address</Label>
               <div className="mt-2">
@@ -51,6 +67,7 @@ export default function Session() {
                   type="Email"
                   required
                   placeholder="correo@gmail.com"
+                  disabled={isLoading}
                   {...register("Email", {
                     required: {
                       value: true,
@@ -63,7 +80,7 @@ export default function Session() {
                   })}
                 />
                 {errors.Email && typeof errors.Email.message === "string" && (
-                  <span>{errors.Email.message}</span>
+                  <span className="text-red-500 text-sm">{errors.Email.message}</span>
                 )}
               </div>
             </div>
@@ -77,6 +94,7 @@ export default function Session() {
                   type="Password"
                   required
                   placeholder="********"
+                  disabled={isLoading}
                   {...register("Password", {
                     required: {
                       value: true,
@@ -94,12 +112,14 @@ export default function Session() {
                 />
                 {errors.Password &&
                   typeof errors.Password.message === "string" && (
-                    <span>{errors.Password.message}</span>
+                    <span className="text-red-500 text-sm">{errors.Password.message}</span>
                   )}
               </div>
             </div>
             <div>
-              <Button type="submit">Sign in</Button>
+              <Button type="submit" disabled={isLoading}>
+                {isLoading ? "Iniciando sesión..." : "Sign in"}
+              </Button>
             </div>
           </form>
         </div>

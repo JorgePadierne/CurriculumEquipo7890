@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { Input, Label, Button } from "./ui";
+import { Input, Label, Button } from "../ui";
 
 export default function Example() {
   const {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect, useCallback } from "react";
-import { Label, Input, Button } from "./ui";
+import { Label, Input, Button } from "../ui";
 
 export default function Lista() {
   type item = {
