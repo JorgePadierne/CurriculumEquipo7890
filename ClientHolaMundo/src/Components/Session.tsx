@@ -1,11 +1,9 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Input from "./ui/Input";
 import Label from "./ui/Label";
 
-export default function Example() {
-  const [res, useRes] = useState();
+export default function Session() {
   const {
     register,
     handleSubmit,
@@ -21,7 +19,8 @@ export default function Example() {
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      await MiAxios.post("/api/usuario/iniciarsesion", data);
+      const respuesta = await MiAxios.post("/api/usuario/iniciarsesion", data);
+      console.log(respuesta.status);
     } catch (error) {
       if (axios.isAxiosError(error)) {
         console.error(

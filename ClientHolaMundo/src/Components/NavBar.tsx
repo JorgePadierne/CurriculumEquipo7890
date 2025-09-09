@@ -12,7 +12,8 @@ import { NavLink, useLocation } from "react-router-dom";
 
 const navigation = [
   { name: "Create Account", path: "/" },
-  { name: "Sign in", path: "/lista" },
+  { name: "Sign in", path: "/signin" },
+  { name: "List", path: "/list" },
 ];
 
 function classNames(...classes: string[]) {
