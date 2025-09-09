@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import Input from "./ui/Input";
-import Label from "./ui/Label";
+import { Input, Label, Button } from "./ui";
 
 export default function Example() {
   const {
@@ -37,7 +36,7 @@ export default function Example() {
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
-            Create Your Acoount
+            Create Your Account
           </h2>
         </div>
 
@@ -48,9 +47,8 @@ export default function Example() {
               <div className="mt-2">
                 <Input
                   id="Nombre"
-                  type="Nombre"
+                  type="text"
                   required
-                  autoComplete="Nombre"
                   placeholder="Jorge"
                   {...register("Nombre", {
                     required: {
@@ -79,7 +77,6 @@ export default function Example() {
                   id="Email"
                   type="Email"
                   required
-                  autoComplete="Email"
                   placeholder="correo@gmail.com"
                   {...register("Email", {
                     required: {
@@ -106,7 +103,6 @@ export default function Example() {
                   id="Password"
                   type="Password"
                   required
-                  autoComplete="current-Password"
                   placeholder="********"
                   {...register("Password", {
                     required: {
@@ -130,12 +126,7 @@ export default function Example() {
               </div>
             </div>
             <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Create
-              </button>
+              <Button type="submit">Create</Button>
             </div>
           </form>
         </div>

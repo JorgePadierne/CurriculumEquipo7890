@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import Input from "./ui/Input";
-import Label from "./ui/Label";
+import { Input, Button, Label } from "./ui";
 
 export default function Session() {
   const {
@@ -20,7 +19,7 @@ export default function Session() {
   const onSubmit = handleSubmit(async (data) => {
     try {
       const respuesta = await MiAxios.post("/api/usuario/iniciarsesion", data);
-      console.log(respuesta.status);
+      if (respuesta.status !== 200) throw new Error("Credenciales inválidas");
     } catch (error) {
       if (axios.isAxiosError(error)) {
         console.error(
@@ -51,7 +50,6 @@ export default function Session() {
                   id="Email"
                   type="Email"
                   required
-                  autoComplete="Email"
                   placeholder="correo@gmail.com"
                   {...register("Email", {
                     required: {
@@ -78,7 +76,6 @@ export default function Session() {
                   id="Password"
                   type="Password"
                   required
-                  autoComplete="current-Password"
                   placeholder="********"
                   {...register("Password", {
                     required: {
@@ -102,12 +99,7 @@ export default function Session() {
               </div>
             </div>
             <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Sign in
-              </button>
+              <Button type="submit">Sign in</Button>
             </div>
           </form>
         </div>

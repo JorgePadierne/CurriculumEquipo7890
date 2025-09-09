@@ -7,4 +7,5 @@ function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
   );
 }
 
+export { Input };
 export default Input;

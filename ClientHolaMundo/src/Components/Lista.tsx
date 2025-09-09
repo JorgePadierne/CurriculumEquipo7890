@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect, useCallback } from "react";
+import { Label, Input, Button } from "./ui";
 
 export default function Lista() {
   type item = {
@@ -14,7 +15,7 @@ export default function Lista() {
   const [lista, setLista] = useState([]);
   const [tarea, setTarea] = useState("");
   const MiAxios = axios.create({
-    baseURL: "http://localhost:5150",
+    baseURL: "http://localhost:5290",
     timeout: 10000,
     headers: {
       "Content-Type": "application/json",
@@ -73,35 +74,60 @@ export default function Lista() {
   };
 
   return (
-    <div className="lista-container">
-      <div className="formulario-tarea">
-        <form onSubmit={onSubmit} className="form content-form">
-          <h2>Agregar Tarea</h2>
-          <input
-            type="text"
-            name="tarea"
+    <>
+      <div className="mt-20 sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 className="text-center text-2xl font-bold text-gray-900 mb-6">
+          Lista de Tareas
+        </h2>
+
+        <form onSubmit={onSubmit} className="mb-6">
+          <div className="mb-4">
+            <Label htmlFor="tarea">Task List</Label>
+          </div>
+          <Input
             id="tarea"
-            placeholder="Jugar lol"
-            onChange={onChange}
+            type="text"
             value={tarea}
+            onChange={onChange}
+            placeholder="type a new task..."
           />
-          <button type="submit">Add</button>
+          <div className=" mt-5">
+            <Button type="submit">Add Task</Button>
+          </div>
         </form>
-      </div>
-      <div className="tareas-container">
-        <h3 className="tareas-titulo">Lista de Tareas</h3>
-        <div className="lista">
-          {lista.map((item: item) => (
-            <div key={item.id} className="tarea">
-              <h4>{item.tarea}</h4>
-              <span className="estado-tarea">
-                {item.realizada ? "Completada" : "Pendiente"}
-              </span>
-              <button onClick={() => eliminar(item.id)}>Eliminar</button>
+
+        <div className="space-y-2">
+          <h3 className="text-lg font-semibold text-gray-900">Tareas:</h3>
+          {lista.length === 0 ? (
+            <p className="text-gray-500 text-center py-4">No task found</p>
+          ) : (
+            <div className="space-y-2">
+              {lista.map((item: item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border"
+                >
+                  <span
+                    className={`flex-1 ${
+                      item.realizada
+                        ? "line-through text-gray-500"
+                        : "text-gray-900"
+                    }`}
+                  >
+                    {item.tarea}
+                  </span>
+                  <button
+                    onClick={() => eliminar(item.id)}
+                    className="ml-2 px-3 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600"
+                  >
+                    Eliminar
+                  </button>
+                </div>
+              ))}
             </div>
-          ))}
+          )}
         </div>
       </div>
-    </div>
+    </>
   );
 }
