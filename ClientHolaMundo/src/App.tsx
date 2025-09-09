@@ -2,44 +2,19 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  NavLink,
 } from "react-router-dom";
-import Form from "./Components/Form.tsx";
-import Usuarios from "./Components/Usuarios.tsx";
-import Correos from "./Components/Correos.tsx";
+import Sing from "./Components/Sign-in";
 import Lista from "./Components/Lista.tsx";
+import NavBar from "./Components/NavBar.tsx";
 import "./App.css";
 
 export default function App() {
   return (
     <Router>
-      <nav>
-        <NavLink to="/" className="nav-link">
-          Home
-        </NavLink>
-        <NavLink to="/lista" className="nav-link">
-          Lista
-        </NavLink>
-      </nav>
-
+      <NavBar />
       <div className="main-container">
         <Routes>
-          <Route
-            path="/"
-            element={
-              <div className="home-container">
-                <div className="content content-form">
-                  <Form />
-                </div>
-                <div className="content content-form">
-                  <Usuarios />
-                </div>
-                <div className="content content-form">
-                  <Correos />
-                </div>
-              </div>
-            }
-          />
+          <Route path="/" element={<Sing />} />
           <Route
             path="/lista"
             element={
