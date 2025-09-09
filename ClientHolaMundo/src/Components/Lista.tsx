@@ -73,27 +73,35 @@ export default function Lista() {
   };
 
   return (
-    <div className="content-lista-tarea">
-      <form onSubmit={onSubmit} className="form content-form form-tarea">
-        <h2>Agregar Tarea</h2>
-        <input
-          type="text"
-          name="tarea"
-          id="tarea"
-          placeholder="Jugar lol"
-          onChange={onChange}
-        />
-        <button type="submit">Add</button>
-      </form>
-      <section className="lista">
-        {lista.map((item: item) => (
-          <div key={item.id} className="tarea">
-            <h2>{item.tarea}</h2>
-            <span>{item.realizada}</span>
-            <button onClick={() => eliminar(item.id)}>Eliminar</button>
-          </div>
-        ))}
-      </section>
+    <div className="lista-container">
+      <div className="formulario-tarea">
+        <form onSubmit={onSubmit} className="form content-form">
+          <h2>Agregar Tarea</h2>
+          <input
+            type="text"
+            name="tarea"
+            id="tarea"
+            placeholder="Jugar lol"
+            onChange={onChange}
+            value={tarea}
+          />
+          <button type="submit">Add</button>
+        </form>
+      </div>
+      <div className="tareas-container">
+        <h3 className="tareas-titulo">Lista de Tareas</h3>
+        <div className="lista">
+          {lista.map((item: item) => (
+            <div key={item.id} className="tarea">
+              <h4>{item.tarea}</h4>
+              <span className="estado-tarea">
+                {item.realizada ? "Completada" : "Pendiente"}
+              </span>
+              <button onClick={() => eliminar(item.id)}>Eliminar</button>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

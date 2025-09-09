@@ -1,7 +1,14 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
+
+
 function Form() {
+  type FormData = {
+    User: string,
+    Email: string,
+    Password: string,
+  }
   const MiAxios = axios.create({
     baseURL: "http://localhost:5150",
     timeout: 10000,
@@ -16,7 +23,11 @@ function Form() {
     watch,
   } = useForm();
   const onSubmit = handleSubmit(async (data) => {
-    const filteredData = data;
+    const filteredData: FormData = {
+      User: data.User,
+      Email: data.Email,
+      Password: data.Password,
+    }
     try {
       await MiAxios.post("/api/usuario/agregar", filteredData);
     } catch (error) {

@@ -22,12 +22,12 @@ export default function App() {
         </NavLink>
       </nav>
 
-      <div className="content">
+      <div className="main-container">
         <Routes>
           <Route
             path="/"
             element={
-              <>
+              <div className="home-container">
                 <div className="content content-form">
                   <Form />
                 </div>
@@ -37,7 +37,7 @@ export default function App() {
                 <div className="content content-form">
                   <Correos />
                 </div>
-              </>
+              </div>
             }
           />
           <Route
