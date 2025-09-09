@@ -19,7 +19,7 @@ export default function Example() {
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      await MiAxios.post("/api/usuario", data);
+      await MiAxios.post("/api/usuario/agregar", data);
     } catch (error) {
       if (axios.isAxiosError(error)) {
         console.error(
@@ -47,15 +47,15 @@ export default function Example() {
               <Label htmlFor="user">User</Label>
               <div className="mt-2">
                 <Input
-                  id="user"
-                  type="user"
+                  id="Nombre"
+                  type="Nombre"
                   required
-                  autoComplete="user"
+                  autoComplete="Nombre"
                   placeholder="Jorge"
-                  {...register("User", {
+                  {...register("Nombre", {
                     required: {
                       value: true,
-                      message: "User is required",
+                      message: "Name is required",
                     },
                     minLength: {
                       value: 4,
@@ -73,13 +73,13 @@ export default function Example() {
               </div>
             </div>
             <div>
-              <Label htmlFor="email">Email address</Label>
+              <Label htmlFor="Email">Email address</Label>
               <div className="mt-2">
                 <Input
-                  id="email"
-                  type="email"
+                  id="Email"
+                  type="Email"
                   required
-                  autoComplete="email"
+                  autoComplete="Email"
                   placeholder="correo@gmail.com"
                   {...register("Email", {
                     required: {
@@ -103,8 +103,8 @@ export default function Example() {
               </div>
               <div className="mt-2">
                 <Input
-                  id="password"
-                  type="password"
+                  id="Password"
+                  type="Password"
                   required
                   autoComplete="current-password"
                   placeholder="********"
