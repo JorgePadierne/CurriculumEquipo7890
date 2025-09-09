@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
-import { AuthContext, type AuthContextType, type User, type AuthState } from './AuthContext';
+import { AuthContext, type AuthContextType, type User, type AuthState } from './AuthContext.ts';
 
 // Props para el proveedor
 interface AuthProviderProps {

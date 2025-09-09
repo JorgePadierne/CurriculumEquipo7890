@@ -4,7 +4,7 @@ import Lista from "./components/services/Lista.tsx";
 import NavBar from "./components/NavBar.tsx";
 import Session from "./components/services/Session.tsx";
 import ProtectedRoute from "./components/ProtectedRoute.tsx";
-import { AuthProvider } from "./contexts/AuthContext";
+import { AuthProvider } from "./contexts/AuthContext.tsx";
 import "./App.css";
 
 export default function App() {
