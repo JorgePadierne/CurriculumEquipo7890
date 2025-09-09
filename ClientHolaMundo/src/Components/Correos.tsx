@@ -2,8 +2,11 @@ import { useState } from "react";
 import axios from "axios";
 
 function Correos() {
-  const [textoInput, setTextoInput] = useState("");
-  const [usuarios, setUsuarios] = useState("");
+  interface InputChangeEvent {
+    target: { value: string };
+  }
+  const [textoInput, setTextoInput] = useState<string>("");
+  const [usuarios, setUsuarios] = useState<string>("");
 
   const MiAxios = axios.create({
     baseURL: "http://localhost:5150",
@@ -13,25 +16,29 @@ function Correos() {
     },
   });
 
-  const fetchData = async (textoInput) => {
+  const fetchData = async (textoInput: string) => {
     try {
       const response = await MiAxios.get(
         `/api/usuario/buscar@?email=${textoInput}`
       );
       setUsuarios(response.data);
     } catch (error) {
-      console.error(
-        "Error en la petición:",
-        error.response?.data || error.message
-      );
+      if (axios.isAxiosError(error)) {
+        console.error(
+          "Error en la petición:",
+          error.response?.data || error.message
+        );
+      } else {
+        console.error("Error en la petición:", String(error));
+      }
     }
   };
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: InputChangeEvent) => {
     setTextoInput(event.target.value);
   };
 
-  const handleButtonClick = () => {
+  const handleButtonClick = (textoInput: string) => {
     fetchData(textoInput);
   };
 
@@ -44,8 +51,7 @@ function Correos() {
         onChange={handleInputChange}
         placeholder="Escribe algo"
       />
-      <button onClick={handleButtonClick}>Buscar</button>
-
+      <button onClick={() => handleButtonClick(textoInput)}>Buscar</button>
       <span>{usuarios}</span>
     </section>
   );
