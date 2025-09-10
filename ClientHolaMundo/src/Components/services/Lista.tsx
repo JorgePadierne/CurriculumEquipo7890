@@ -16,7 +16,7 @@ export default function Lista() {
   const [tarea, setTarea] = useState("");
   const [description, setDescripcion] = useState("");
   const MiAxios = axios.create({
-    baseURL: "http://localhost:5290",
+    baseURL: "https://curriculumequipo7890.onrender.com",
     timeout: 10000,
     headers: {
       "Content-Type": "application/json",

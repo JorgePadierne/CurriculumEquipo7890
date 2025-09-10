@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import type { ReactNode } from 'react';
-import { AuthContext, type AuthContextType, type User, type AuthState } from './AuthContext.ts';
+import React, { useState, useEffect } from "react";
+import type { ReactNode } from "react";
+import {
+  AuthContext,
+  type AuthContextType,
+  type User,
+  type AuthState,
+} from "./AuthContext.ts";
 
 // Props para el proveedor
 interface AuthProviderProps {
@@ -20,9 +25,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   useEffect(() => {
     const checkAuth = () => {
       try {
-        const savedToken = localStorage.getItem('authToken');
-        const savedUser = localStorage.getItem('userData');
-        
+        const savedToken = localStorage.getItem("authToken");
+        const savedUser = localStorage.getItem("userData");
+
         if (savedToken && savedUser) {
           setAuthState({
             isAuthenticated: true,
@@ -31,11 +36,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             loading: false,
           });
         } else {
-          setAuthState(prev => ({ ...prev, loading: false }));
+          setAuthState((prev) => ({ ...prev, loading: false }));
         }
       } catch (error) {
-        console.error('Error al verificar autenticación:', error);
-        setAuthState(prev => ({ ...prev, loading: false }));
+        console.error("Error al verificar autenticación:", error);
+        setAuthState((prev) => ({ ...prev, loading: false }));
       }
     };
 
@@ -43,26 +48,32 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   // Función para iniciar sesión
-  const login = async (email: string, password: string): Promise<{ success: boolean; message?: string }> => {
+  const login = async (
+    email: string,
+    password: string
+  ): Promise<{ success: boolean; message?: string }> => {
     try {
-      const response = await fetch('http://localhost:5290/api/usuario/iniciarsesion', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ Email: email, Password: password }),
-      });
+      const response = await fetch(
+        "https://curriculumequipo7890.onrender.com/api/usuario/iniciarsesion",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ Email: email, Password: password }),
+        }
+      );
 
       const data = await response.json();
 
       if (response.ok) {
         // Si el login es exitoso
         const userData = { email, nombre: data.nombre || email };
-        const token = data.token || 'dummy-token'; // Ajusta según tu backend
+        const token = data.token || "dummy-token"; // Ajusta según tu backend
 
         // Guardar en localStorage
-        localStorage.setItem('authToken', token);
-        localStorage.setItem('userData', JSON.stringify(userData));
+        localStorage.setItem("authToken", token);
+        localStorage.setItem("userData", JSON.stringify(userData));
 
         // Actualizar estado
         setAuthState({
@@ -75,24 +86,24 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         return { success: true };
       } else {
         // Si hay error en el login
-        return { 
-          success: false, 
-          message: data.message || 'Credenciales incorrectas' 
+        return {
+          success: false,
+          message: data.message || "Credenciales incorrectas",
         };
       }
     } catch (error) {
-      console.error('Error en login:', error);
-      return { 
-        success: false, 
-        message: 'Error de conexión. Inténtalo de nuevo.' 
+      console.error("Error en login:", error);
+      return {
+        success: false,
+        message: "Error de conexión. Inténtalo de nuevo.",
       };
     }
   };
 
   // Función para cerrar sesión
   const logout = () => {
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('userData');
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("userData");
     setAuthState({
       isAuthenticated: false,
       user: null,
@@ -104,13 +115,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   // Función para actualizar usuario
   const setUser = (user: User) => {
     setAuthState((prev: AuthState) => ({ ...prev, user }));
-    localStorage.setItem('userData', JSON.stringify(user));
+    localStorage.setItem("userData", JSON.stringify(user));
   };
 
   // Función para actualizar token
   const setToken = (token: string) => {
     setAuthState((prev: AuthState) => ({ ...prev, token }));
-    localStorage.setItem('authToken', token);
+    localStorage.setItem("authToken", token);
   };
 
   const value: AuthContextType = {
@@ -121,10 +132,5 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setToken,
   };
 
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
-
