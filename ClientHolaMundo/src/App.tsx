@@ -16,13 +16,13 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Create />} />
             <Route path="/signin" element={<Session />} />
-            <Route 
-              path="/list" 
+            <Route
+              path="/list"
               element={
                 <ProtectedRoute>
                   <Lista />
                 </ProtectedRoute>
-              } 
+              }
             />
           </Routes>
         </div>
