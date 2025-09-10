@@ -17,8 +17,10 @@ builder.Services.AddCors(options =>
 });
 builder.Services.AddOpenApi();
 //insertar DB
-builder.Services.AddDbContext<ToDoListContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
-var app = builder.Build();
+builder.Services.AddDbContext<ToDoListContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+           .EnableSensitiveDataLogging() 
+           .LogTo(Console.WriteLine)); var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
