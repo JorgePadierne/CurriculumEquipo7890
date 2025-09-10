@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Create from "./components/services/Create.tsx";
-import Lista from "./components/services/Lista.tsx";
-import NavBar from "./components/NavBar.tsx";
-import Session from "./components/services/Session.tsx";
-import ProtectedRoute from "./components/ProtectedRoute.tsx";
+import Create from "./Components/services/Create.tsx";
+import Lista from "./Components/services/Lista.tsx";
+import NavBar from "./Components/NavBar.tsx";
+import Session from "./Components/services/Session.tsx";
+import ProtectedRoute from "./Components/ProtectedRoute.tsx";
 import { AuthProvider } from "./contexts/AuthContext.tsx";
 import "./App.css";
 
