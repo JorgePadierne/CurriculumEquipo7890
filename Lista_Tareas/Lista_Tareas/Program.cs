@@ -19,7 +19,6 @@ builder.Services.AddOpenApi();
 //insertar DB
 builder.Services.AddDbContext<ToDoListContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
-           .EnableSensitiveDataLogging() 
            .LogTo(Console.WriteLine)); var app = builder.Build();
 
 
