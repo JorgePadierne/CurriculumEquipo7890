@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ServerHolaMundo",
-    "\\ServerHolaMundo\\ServerHolaMundo",
-    "\\ServerHolaMundo\\ServerHolaMundo\\Controllers"
+    "\\Lista_Tareas",
+    "\\Lista_Tareas\\Lista_Tareas"
   ],
-  "SelectedNode": "\\ServerHolaMundo\\ServerHolaMundo\\Controllers\\ListaController.cs",
+  "SelectedNode": "\\Lista_Tareas\\Lista_Tareas\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

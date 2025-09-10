@@ -1,9 +1,51 @@
 using Lista_Tareas.Context;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// ----------------------------------------------------
+// 1️⃣ Leer DATABASE_URL (Internal URL en Render)
+// ----------------------------------------------------
+string? databaseUrl = Environment.GetEnvironmentVariable("todolist_h2s9");
 
+string connectionString;
+
+if (!string.IsNullOrEmpty(databaseUrl))
+{
+    // Convertir la URL de Render al formato Npgsql
+    var databaseUri = new Uri(databaseUrl);
+    var userInfo = databaseUri.UserInfo.Split(':');
+
+    var npgsqlBuilder = new NpgsqlConnectionStringBuilder
+    {
+        Host = databaseUri.Host,
+        Port = databaseUri.Port,
+        Username = userInfo[0],
+        Password = userInfo[1],
+        Database = databaseUri.AbsolutePath.TrimStart('/'),
+        SslMode = SslMode.Require,
+        TrustServerCertificate = true
+    };
+
+    connectionString = npgsqlBuilder.ConnectionString;
+}
+else
+{
+    // Si no hay variable de entorno, usar la cadena local de appsettings.json
+    connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+}
+
+// ----------------------------------------------------
+// 2️⃣ Configurar DbContext
+// ----------------------------------------------------
+builder.Services.AddDbContext<ToDoListContext>(options =>
+    options.UseNpgsql(connectionString)
+           .LogTo(Console.WriteLine));
+
+// ----------------------------------------------------
+// 3️⃣ Configurar servicios y CORS
+// ----------------------------------------------------
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
@@ -16,22 +58,18 @@ builder.Services.AddCors(options =>
         });
 });
 builder.Services.AddOpenApi();
-//insertar DB
-builder.Services.AddDbContext<ToDoListContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
-           .EnableSensitiveDataLogging() 
-           .LogTo(Console.WriteLine)); var app = builder.Build();
 
+var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// ----------------------------------------------------
+// 4️⃣ Middleware
+// ----------------------------------------------------
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
 app.UseCors("PermitirReact");
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
