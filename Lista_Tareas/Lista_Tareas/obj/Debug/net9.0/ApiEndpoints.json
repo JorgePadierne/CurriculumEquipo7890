@@ -33,6 +33,27 @@
   },
   {
     "ContainingType": "Lista_Tareas.Controllers.ListaController",
+    "Method": "ActualizarTareas",
+    "RelativePath": "api2/Lista/ActualizarTareas/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "listatarea",
+        "Type": "Lista_Tareas.Models.Listatarea",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Lista_Tareas.Controllers.ListaController",
     "Method": "AgregarTarea",
     "RelativePath": "api2/Lista/AgregarTarea",
     "HttpMethod": "POST",

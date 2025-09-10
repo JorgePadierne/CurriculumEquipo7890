@@ -24,7 +24,7 @@ export default function Lista() {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await MiAxios.get("/ToDoList/Lista/VerTareas");
+      const response = await MiAxios.get("/api2/Lista/RecibirTareas");
       setLista(response.data);
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -49,7 +49,7 @@ export default function Lista() {
   const onSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
-      await MiAxios.post("/ToDoList/Lista/AgregarTarea", { tarea });
+      await MiAxios.post("/api2/Lista/AgregarTarea", { tarea });
     } catch (error) {
       if (axios.isAxiosError(error)) {
         console.error(
@@ -66,7 +66,7 @@ export default function Lista() {
 
   const eliminar = async (id: number) => {
     try {
-      await MiAxios.delete(`/ToDoList/Lista/Eliminar/${id}`);
+      await MiAxios.delete(`/api2/Lista/EliminarTareas/${id}`);
     } catch (error) {
       console.error(error);
     }
