@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Input, Label, Button } from "../ui";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Example() {
   const {
@@ -19,13 +20,43 @@ export default function Example() {
   const onSubmit = handleSubmit(async (data) => {
     try {
       await MiAxios.post("/api/usuario/agregar", data);
+      toast.success("Usuario creado correctamente", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     } catch (error) {
       if (axios.isAxiosError(error)) {
+        toast.error("Error al crear usuario", {
+          position: "bottom-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         console.error(
           "Error en la petición:",
           error.response?.data || error.message
         );
       } else {
+        toast.error("Error al crear usuario", {
+          position: "bottom-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         console.error("Error en la petición:", String(error));
       }
     }
@@ -33,7 +64,11 @@ export default function Example() {
 
   return (
     <>
-      <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <ToastContainer />
+      <div
+        className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8"
+        id="content"
+      >
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
             Create Your Account

@@ -6,6 +6,7 @@ import Session from "./Components/services/Session.tsx";
 import ProtectedRoute from "./Components/ProtectedRoute.tsx";
 import { AuthProvider } from "./contexts/AuthContext.tsx";
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   return (

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect, useCallback } from "react";
 import { Label, Input, Button } from "../ui";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Lista() {
   type item = {
@@ -57,14 +58,44 @@ export default function Lista() {
         tarea,
         description,
       });
+      toast.success("Usuario creado correctamente", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     } catch (error) {
       if (axios.isAxiosError(error)) {
         console.error(
           "Error en la petición:",
           error.response?.data || error.message
         );
+        toast.error("Error al agregar tarea", {
+          position: "bottom-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       } else {
         console.error("Error en la petición:", String(error));
+        toast.error("Error al agregar tarea", {
+          position: "bottom-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     }
     fetchData();
@@ -74,14 +105,35 @@ export default function Lista() {
   const eliminar = async (id: number) => {
     try {
       await MiAxios.delete(`/api2/Lista/Eliminartareas/${id}`);
+      toast.success("Tarea eliminada", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     } catch (error) {
       console.error(error);
+      toast.error("Error al eliminar la tarea", {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
     fetchData();
   };
 
   return (
     <>
+      <ToastContainer />
       <div className="mt-20 sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className="text-center text-2xl font-bold text-gray-900 mb-6">
           Lista de Tareas
