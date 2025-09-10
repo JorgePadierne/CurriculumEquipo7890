@@ -4,9 +4,9 @@ import { Label, Input, Button } from "../ui";
 
 export default function Lista() {
   type item = {
-    Id: number;
-    Tarea: string;
-    Description: string;
+    id: number;
+    tarea: string;
+    descripcion: string;
   };
 
   interface InputChangeEvent {
@@ -99,10 +99,10 @@ export default function Lista() {
             placeholder="type a new task..."
           />
           <div className="mb-4">
-            <Label htmlFor="Description">Description</Label>
+            <Label htmlFor="Descripcion">Description</Label>
           </div>
           <Input
-            id="Description"
+            id="Descripcion"
             type="text"
             value={description}
             onChange={onChangeDes}
@@ -121,12 +121,12 @@ export default function Lista() {
             <div className="space-y-2">
               {lista.map((item: item) => (
                 <div
-                  key={item.Id}
+                  key={item.id}
                   className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border"
                 >
-                  <h2>{item.Tarea}</h2>
-                  <p>{item.Description}</p>
-                  <Button onClick={() => eliminar(item.Id)}>Eliminar</Button>
+                  <h2>{item.tarea}</h2>
+                  <p>{item.descripcion}</p>
+                  <Button onClick={() => eliminar(item.id)}>Eliminar</Button>
                 </div>
               ))}
             </div>
