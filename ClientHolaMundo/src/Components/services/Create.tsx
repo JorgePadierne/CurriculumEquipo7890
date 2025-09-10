@@ -65,7 +65,9 @@ export default function Example() {
                   })}
                 />
                 {typeof errors.Nombre?.message === "string" && (
-                  <span>{errors.Nombre.message}</span>
+                  <span className="text-red-500 text-sm">
+                    {errors.Nombre.message}
+                  </span>
                 )}
               </div>
             </div>
@@ -88,7 +90,9 @@ export default function Example() {
                   })}
                 />
                 {errors.Email && typeof errors.Email.message === "string" && (
-                  <span>{errors.Email.message}</span>
+                  <span className="text-red-500 text-sm">
+                    {errors.Email.message}
+                  </span>
                 )}
               </div>
             </div>
@@ -118,7 +122,9 @@ export default function Example() {
                 />
                 {errors.Password &&
                   typeof errors.Password.message === "string" && (
-                    <span>{errors.Password.message}</span>
+                    <span className="text-red-500 text-sm">
+                      {errors.Password.message}
+                    </span>
                   )}
               </div>
             </div>
