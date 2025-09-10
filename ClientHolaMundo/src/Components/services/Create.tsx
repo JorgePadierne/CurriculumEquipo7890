@@ -48,7 +48,6 @@ export default function Example() {
                 <Input
                   id="Nombre"
                   type="text"
-                  required
                   placeholder="Jorge"
                   {...register("Nombre", {
                     required: {
@@ -76,7 +75,6 @@ export default function Example() {
                 <Input
                   id="Email"
                   type="Email"
-                  required
                   placeholder="correo@gmail.com"
                   {...register("Email", {
                     required: {
@@ -102,7 +100,6 @@ export default function Example() {
                 <Input
                   id="Password"
                   type="Password"
-                  required
                   placeholder="********"
                   {...register("Password", {
                     required: {

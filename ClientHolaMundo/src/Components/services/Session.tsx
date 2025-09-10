@@ -10,7 +10,7 @@ export default function Session() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  
+
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,10 +23,10 @@ export default function Session() {
   const logUsers = handleSubmit(async (data) => {
     setIsLoading(true);
     setErrorMessage("");
-    
+
     try {
       const result = await login(data.Email, data.Password);
-      
+
       if (result.success) {
         // Redirigir a la página de donde venía o a la página principal
         navigate(from, { replace: true });
@@ -58,14 +58,13 @@ export default function Session() {
                 {errorMessage}
               </div>
             )}
-            
+
             <div>
               <Label htmlFor="Email">Email address</Label>
               <div className="mt-2">
                 <Input
                   id="Email"
                   type="Email"
-                  required
                   placeholder="correo@gmail.com"
                   disabled={isLoading}
                   {...register("Email", {
@@ -80,7 +79,9 @@ export default function Session() {
                   })}
                 />
                 {errors.Email && typeof errors.Email.message === "string" && (
-                  <span className="text-red-500 text-sm">{errors.Email.message}</span>
+                  <span className="text-red-500 text-sm">
+                    {errors.Email.message}
+                  </span>
                 )}
               </div>
             </div>
@@ -92,7 +93,6 @@ export default function Session() {
                 <Input
                   id="Password"
                   type="Password"
-                  required
                   placeholder="********"
                   disabled={isLoading}
                   {...register("Password", {
@@ -112,7 +112,9 @@ export default function Session() {
                 />
                 {errors.Password &&
                   typeof errors.Password.message === "string" && (
-                    <span className="text-red-500 text-sm">{errors.Password.message}</span>
+                    <span className="text-red-500 text-sm">
+                      {errors.Password.message}
+                    </span>
                   )}
               </div>
             </div>
