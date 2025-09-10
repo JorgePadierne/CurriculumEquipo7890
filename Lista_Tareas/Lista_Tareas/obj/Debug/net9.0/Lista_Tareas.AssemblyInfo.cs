@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lista_Tareas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83d31a5a568c8771e05f256da7b780b849c7f7f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+565f17a502d414bc758662b216a851e83e27b658")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lista_Tareas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lista_Tareas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

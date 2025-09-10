@@ -18,7 +18,7 @@
   {
     "ContainingType": "Lista_Tareas.Controllers.UsuarioController",
     "Method": "Entrar",
-    "RelativePath": "api/Usuario/Entrar",
+    "RelativePath": "api/Usuario/IniciarSesion",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

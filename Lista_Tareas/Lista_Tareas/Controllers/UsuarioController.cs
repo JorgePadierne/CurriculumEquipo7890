@@ -39,7 +39,7 @@ namespace Lista_Tareas.Controllers
             }
           
         }
-        [HttpPost("Entrar")]
+        [HttpPost("IniciarSesion")]
         public async Task<IActionResult> Entrar([FromBody] Login login)
         {
             try
@@ -47,19 +47,19 @@ namespace Lista_Tareas.Controllers
                 var usuario = await _context.Usuarios.FirstOrDefaultAsync(u =>  u.Email == login.Email);
                 if (usuario == null)
                 {
-                    return Unauthorized("Los datos no son correctos");
+                    return Unauthorized(new { success = false, message = "Los datos no son correctos" });
                 }
                 var hasher = new PasswordHasher<Usuario>();
                 var resultado = hasher.VerifyHashedPassword(usuario , usuario.Password , login.Password);
                 if (resultado == PasswordVerificationResult.Failed)
                 {
-                    return Unauthorized("Usuario o contraseña incorrectos");
+                    return Unauthorized(new { success = false, message = "Usuario o contraseña incorrectos" });
                 }
-                return Ok("Inicio de sesion exitoso");
+                return Ok(new { success = true, message = "Inicio de sesión exitoso" });
             }
             catch (Exception ex )
             {
-                return  StatusCode(500 , "Error al iniciar sesion: " + ex.Message);
+                return StatusCode(500, new { success = false, message = "Error al iniciar sesión: " + ex.Message });
             }
 
         }
