@@ -9,27 +9,24 @@ string connectionString;
 
 if (!string.IsNullOrEmpty(databaseUrl))
 {
-    // Normalizar prefijo
+    // Asegúrate que el prefijo sea 'postgres://'
     if (databaseUrl.StartsWith("postgresql://"))
         databaseUrl = "postgres://" + databaseUrl.Substring("postgresql://".Length);
 
-    // Parsear manualmente
+    // Parsear la URL
     var uri = new Uri(databaseUrl);
     var userInfo = uri.UserInfo.Split(':');
 
-    var npgsqlBuilder = new NpgsqlConnectionStringBuilder
+    connectionString = new NpgsqlConnectionStringBuilder
     {
         Host = uri.Host,
-        Port = uri.Port == -1 ? 5432 : uri.Port,
+        Port = uri.Port > 0 ? uri.Port : 5432,
         Username = userInfo[0],
         Password = userInfo.Length > 1 ? userInfo[1] : "",
         Database = uri.AbsolutePath.TrimStart('/'),
-        // Fuerzas tú el SSL en vez de leer el query string
         SslMode = SslMode.Require,
         TrustServerCertificate = true
-    };
-
-    connectionString = npgsqlBuilder.ConnectionString;
+    }.ConnectionString;
 }
 else
 {
@@ -40,16 +37,17 @@ builder.Services.AddDbContext<ToDoListContext>(options =>
     options.UseNpgsql(connectionString));
 
 builder.Services.AddControllers();
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("PermitirReact",
-        policy =>
-        {
-            policy.WithOrigins("https://curriculum-equipo7890.vercel.app")
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
-        });
+    options.AddPolicy("PermitirReact", policy =>
+    {
+        policy.WithOrigins("https://curriculum-equipo7890.vercel.app")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
 });
+
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
@@ -63,5 +61,6 @@ app.UseCors("PermitirReact");
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
+
 
 
