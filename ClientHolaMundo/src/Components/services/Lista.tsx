@@ -28,7 +28,7 @@ export default function Lista() {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await MiAxios.get("/api2/lista/recibirtarea");
+      const response = await MiAxios.get("/api2/Lista/RecibirTareas");
       console.log(response.data);
       setLista(response.data);
     } catch (error) {
@@ -108,7 +108,7 @@ export default function Lista() {
 
   const eliminar = async (id: number) => {
     try {
-      await MiAxios.delete(`/api2/Lista/Eliminartareas/${id}`);
+      await MiAxios.delete(`/api2/Lista/EliminarTareas/${id}`);
       toast.success("Tarea eliminada", {
         position: "bottom-right",
         autoClose: 5000,
