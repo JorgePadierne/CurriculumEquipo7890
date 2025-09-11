@@ -3,6 +3,15 @@ import { useState, useEffect, useCallback } from "react";
 import { Label, Input, Button } from "../ui";
 import { ToastContainer, toast } from "react-toastify";
 
+// Mover la instancia de axios fuera del componente para evitar recreación
+const MiAxios = axios.create({
+  baseURL: "https://curriculumequipo7890.onrender.com",
+  timeout: 10000,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
 export default function Lista() {
   type item = {
     id: number;
@@ -16,17 +25,11 @@ export default function Lista() {
   const [lista, setLista] = useState([]);
   const [tarea, setTarea] = useState("");
   const [description, setDescripcion] = useState("");
-  const MiAxios = axios.create({
-    baseURL: "https://curriculumequipo7890.onrender.com",
-    timeout: 10000,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
 
   const fetchData = useCallback(async () => {
     try {
       const response = await MiAxios.get("/api2/lista/recibirtarea");
+      console.log(response.data);
       setLista(response.data);
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -38,7 +41,7 @@ export default function Lista() {
         console.error("Error en la petición:", String(error));
       }
     }
-  }, [MiAxios]);
+  }, []); // Eliminar MiAxios de las dependencias ya que ahora es constante
 
   useEffect(() => {
     fetchData();
@@ -58,6 +61,7 @@ export default function Lista() {
         tarea,
         description,
       });
+
       toast.success("Usuario creado correctamente", {
         position: "bottom-right",
         autoClose: 5000,
