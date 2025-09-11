@@ -5,11 +5,7 @@ using Npgsql;
 var builder = WebApplication.CreateBuilder(args);
 
 // ----------------------------------------------------
-<<<<<<< HEAD
 // 1️⃣ Leer DATABASE_URL (Neon / Render)
-=======
-// 1️⃣ Leer DATABASE_URL (Internal URL en Render)
->>>>>>> c9ff0ef46ec7e6811e21456197d5923846dc27f5
 // ----------------------------------------------------
 string? databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 
@@ -17,7 +13,6 @@ string connectionString;
 
 if (!string.IsNullOrEmpty(databaseUrl))
 {
-<<<<<<< HEAD
     // Normalizar prefijo postgres:// → postgresql://
     if (databaseUrl.StartsWith("postgres://"))
     {
@@ -36,18 +31,6 @@ if (!string.IsNullOrEmpty(databaseUrl))
         Port = port,
         Username = userInfo[0],
         Password = userInfo.Length > 1 ? userInfo[1] : "",
-=======
-    // Convertir la URL de Render al formato Npgsql
-    var databaseUri = new Uri(databaseUrl);
-    var userInfo = databaseUri.UserInfo.Split(':');
-
-    var npgsqlBuilder = new NpgsqlConnectionStringBuilder
-    {
-        Host = databaseUri.Host,
-        Port = databaseUri.Port,
-        Username = userInfo[0],
-        Password = userInfo[1],
->>>>>>> c9ff0ef46ec7e6811e21456197d5923846dc27f5
         Database = databaseUri.AbsolutePath.TrimStart('/'),
         SslMode = SslMode.Require,
         TrustServerCertificate = true
@@ -57,11 +40,7 @@ if (!string.IsNullOrEmpty(databaseUrl))
 }
 else
 {
-<<<<<<< HEAD
     // Fallback a la cadena local
-=======
-    // Si no hay variable de entorno, usar la cadena local de appsettings.json
->>>>>>> c9ff0ef46ec7e6811e21456197d5923846dc27f5
     connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 }
 
