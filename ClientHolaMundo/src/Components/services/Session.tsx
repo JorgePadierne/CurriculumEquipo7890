@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Input, Button, Label } from "../ui";
 import { useAuth } from "../../hooks/useAuth";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Session() {
   const {
@@ -15,27 +16,54 @@ export default function Session() {
   const navigate = useNavigate();
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
   // Obtener la ruta de donde venía el usuario antes del login
   const from = location.state?.from?.pathname || "/";
 
   const logUsers = handleSubmit(async (data) => {
     setIsLoading(true);
-    setErrorMessage("");
 
     try {
       const result = await login(data.Email, data.Password);
-
-      if (result.success) {
-        // Redirigir a la página de donde venía o a la página principal
-        navigate(from, { replace: true });
-      } else {
-        setErrorMessage(result.message || "Error al iniciar sesión");
-      }
+      setTimeout(() => {
+        if (result.success) {
+          // Redirigir a la página de donde venía o a la página principal
+          toast.success("Sesion iniciada", {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          navigate(from, { replace: true });
+        } else {
+          toast.error("Error al inicar sesion", {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+      }, 2000);
     } catch (error) {
+      toast.error("Error al inicar sesion", {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       console.error("Error en login:", error);
-      setErrorMessage("Error inesperado. Inténtalo de nuevo.");
     } finally {
       setIsLoading(false);
     }
@@ -43,6 +71,7 @@ export default function Session() {
 
   return (
     <>
+      <ToastContainer />
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
@@ -52,13 +81,6 @@ export default function Session() {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" onSubmit={logUsers}>
-            {/* Mostrar mensaje de error si existe */}
-            {errorMessage && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
-                {errorMessage}
-              </div>
-            )}
-
             <div>
               <Label htmlFor="Email">Email address</Label>
               <div className="mt-2">
