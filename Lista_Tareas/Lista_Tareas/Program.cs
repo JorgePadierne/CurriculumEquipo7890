@@ -5,34 +5,17 @@ using Npgsql;
 var builder = WebApplication.CreateBuilder(args);
 
 // ----------------------------------------------------
-// 1️⃣ Leer DATABASE_URL (Neon / Render)
+// 1️⃣ Construir la cadena de conexión
 // ----------------------------------------------------
 string? databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
-
 string connectionString;
 
 if (!string.IsNullOrEmpty(databaseUrl))
 {
-    // Normalizar prefijo postgres:// → postgresql://
-    if (databaseUrl.StartsWith("postgres://"))
+    // Npgsql soporta URLs con parámetros (?sslmode=require)
+    var npgsqlBuilder = new NpgsqlConnectionStringBuilder(databaseUrl)
     {
-        databaseUrl = databaseUrl.Replace("postgres://", "postgresql://");
-    }
-
-    var databaseUri = new Uri(databaseUrl);
-    var userInfo = databaseUri.UserInfo.Split(':');
-
-    // Si no trae puerto → usar 5432 por defecto
-    int port = databaseUri.Port != -1 ? databaseUri.Port : 5432;
-
-    var npgsqlBuilder = new NpgsqlConnectionStringBuilder
-    {
-        Host = databaseUri.Host,
-        Port = port,
-        Username = userInfo[0],
-        Password = userInfo.Length > 1 ? userInfo[1] : "",
-        Database = databaseUri.AbsolutePath.TrimStart('/'),
-        SslMode = SslMode.Require,
+        // Asegura que confíe en el certificado (en Neon/Render es necesario)
         TrustServerCertificate = true
     };
 
@@ -40,12 +23,12 @@ if (!string.IsNullOrEmpty(databaseUrl))
 }
 else
 {
-    // Fallback a la cadena local
+    // Fallback local (appsettings.json → DefaultConnection)
     connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 }
 
 // ----------------------------------------------------
-// 2️⃣ Configurar DbContext
+// 2️⃣ Registrar DbContext
 // ----------------------------------------------------
 builder.Services.AddDbContext<ToDoListContext>(options =>
     options.UseNpgsql(connectionString));
@@ -54,6 +37,8 @@ builder.Services.AddDbContext<ToDoListContext>(options =>
 // 3️⃣ Configurar servicios y CORS
 // ----------------------------------------------------
 builder.Services.AddControllers();
+
+// CORS: cambia la URL por la de tu front en Vercel
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirReact",
@@ -64,12 +49,14 @@ builder.Services.AddCors(options =>
                   .AllowAnyMethod();
         });
 });
+
+// Si usas Swagger/OpenAPI
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
 // ----------------------------------------------------
-// 4️⃣ Middleware
+// 4️⃣ Middlewares
 // ----------------------------------------------------
 if (app.Environment.IsDevelopment())
 {
@@ -79,5 +66,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors("PermitirReact");
 app.UseAuthorization();
 app.MapControllers();
+
 app.Run();
+
 
