@@ -34,7 +34,8 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirReact", policy =>
     {
-        policy.WithOrigins("https://curriculum-equipo7890.vercel.app")
+        policy.WithOrigins("https://curriculum-equipo7890.vercel.app", 
+                          "https://curriculum-equipo7890-bwje.vercel.app")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
