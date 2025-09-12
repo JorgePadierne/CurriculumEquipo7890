@@ -106,6 +106,7 @@ export default function Lista() {
     }
     fetchData();
     setTarea("");
+    setDescripcion("");
   };
 
   const eliminar = async (id: number) => {
