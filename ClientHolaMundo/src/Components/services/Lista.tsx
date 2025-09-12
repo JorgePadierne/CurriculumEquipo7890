@@ -14,9 +14,9 @@ const MiAxios = axios.create({
 
 export default function Lista() {
   type item = {
-    Id: number;
-    Tarea: string;
-    Descripcion: string;
+    id: number;
+    tarea: string;
+    descripcion: string;
   };
 
   interface InputChangeEvent {
@@ -177,12 +177,12 @@ export default function Lista() {
             <div className="space-y-2">
               {lista.map((item: item) => (
                 <div
-                  key={item.Id}
+                  key={item.id}
                   className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border"
                 >
-                  <h2>{item.Tarea}</h2>
-                  <p>{item.Descripcion}</p>
-                  <Button onClick={() => eliminar(item.Id)}>Eliminar</Button>
+                  <h2>{item.tarea}</h2>
+                  <p>{item.descripcion}</p>
+                  <Button onClick={() => eliminar(item.id)}>Eliminar</Button>
                 </div>
               ))}
             </div>
