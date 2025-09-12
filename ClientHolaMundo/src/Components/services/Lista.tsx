@@ -140,43 +140,70 @@ export default function Lista() {
   return (
     <>
       <ToastContainer />
-      <div className="mt-20 sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 className="text-center text-2xl font-bold text-gray-900 mb-6">
-          Lista de Tareas
-        </h2>
+      <div className="min-h-screen bg-gray-50 py-8">
+        <div className="max-w-2xl mx-auto px-4">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              📋 Lista de Tareas
+            </h1>
+            <p className="text-gray-600">Organiza y gestiona tus tareas diarias</p>
+          </div>
 
-        <form onSubmit={onSubmit} className="mb-6">
-          <div className="mb-4">
-            <Label htmlFor="Tarea">Task List</Label>
-          </div>
-          <Input
-            id="Tarea"
-            type="text"
-            value={tarea}
-            onChange={onChange}
-            placeholder="type a new task..."
-          />
-          <div className="mb-4">
-            <Label htmlFor="Descripcion">Description</Label>
-          </div>
-          <Input
-            id="Descripcion"
-            type="text"
-            value={description}
-            onChange={onChangeDes}
-            placeholder="type a new task..."
-          />
-          <div className=" mt-5">
-            <Button type="submit">Add Task</Button>
-          </div>
-        </form>
+        <div className="bg-white rounded-xl shadow-md border border-gray-200 p-6 mb-8">
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">Agregar Nueva Tarea</h3>
+          <form onSubmit={onSubmit} className="space-y-4">
+            <div>
+              <Label htmlFor="Tarea" className="block text-sm font-medium text-gray-700 mb-2">
+                Título de la Tarea
+              </Label>
+              <Input
+                id="Tarea"
+                type="text"
+                value={tarea}
+                onChange={onChange}
+                placeholder="Escribe el título de tu tarea..."
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+              />
+            </div>
+            <div>
+              <Label htmlFor="Descripcion" className="block text-sm font-medium text-gray-700 mb-2">
+                Descripción
+              </Label>
+              <Input
+                id="Descripcion"
+                type="text"
+                value={description}
+                onChange={onChangeDes}
+                placeholder="Describe los detalles de la tarea..."
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+              />
+            </div>
+            <div className="pt-2">
+              <Button 
+                type="submit"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
+              >
+                Agregar Tarea
+              </Button>
+            </div>
+          </form>
+        </div>
 
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-gray-900">Tareas:</h3>
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-gray-900 flex items-center">
+            <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mr-2">
+              {lista.length}
+            </span>
+            Tareas Pendientes
+          </h3>
           {lista.length === 0 ? (
-            <p className="text-gray-500 text-center py-4">No task found</p>
+            <div className="bg-gray-50 rounded-xl p-8 text-center border-2 border-dashed border-gray-300">
+              <div className="text-gray-400 text-4xl mb-4">📝</div>
+              <p className="text-gray-500 text-lg font-medium mb-2">No hay tareas pendientes</p>
+              <p className="text-gray-400 text-sm">¡Agrega tu primera tarea usando el formulario de arriba!</p>
+            </div>
           ) : (
-            <div className="space-y-2">
+            <div className="space-y-3">
               {lista.map((item: item) => {
                 console.log("Item actual:", item);
                 console.log("Tarea:", item.tarea);
@@ -184,18 +211,32 @@ export default function Lista() {
                 return (
                   <div
                     key={item.id}
-                    className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border"
+                    className="bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300 p-4 mb-3"
                   >
-                    <div className="flex-1 d-flex flex-col">
-                      <h2 className="font-semibold text-gray-900">{item.tarea}</h2>
-                      <p className="text-sm text-gray-600">{item.descripcion}</p>
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1 mr-4">
+                        <h3 className="text-lg font-bold text-gray-800 mb-2 leading-tight">
+                          {item.tarea}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {item.descripcion}
+                        </p>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <Button 
+                          onClick={() => eliminar(item.id)}
+                          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
+                        >
+                          Eliminar
+                        </Button>
+                      </div>
                     </div>
-                    <Button onClick={() => eliminar(item.id)}>Eliminar</Button>
                   </div>
                 );
               })}
             </div>
           )}
+        </div>
         </div>
       </div>
     </>
