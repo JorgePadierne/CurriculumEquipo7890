@@ -14,9 +14,9 @@ const MiAxios = axios.create({
 
 export default function Lista() {
   type item = {
-    id: number;
-    tarea: string;
-    descripcion: string;
+    Id: number;
+    Tarea: string;
+    Descripcion: string;
   };
 
   interface InputChangeEvent {
@@ -58,8 +58,8 @@ export default function Lista() {
     e.preventDefault();
     try {
       await MiAxios.post("/api2/Lista/AgregarTarea", {
-        tarea,
-        description,
+        Tarea: tarea,
+        Descripcion: description,
       });
 
       toast.success("Usuario creado correctamente", {
@@ -177,12 +177,12 @@ export default function Lista() {
             <div className="space-y-2">
               {lista.map((item: item) => (
                 <div
-                  key={item.id}
+                  key={item.Id}
                   className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border"
                 >
-                  <h2>{item.tarea}</h2>
-                  <p>{item.descripcion}</p>
-                  <Button onClick={() => eliminar(item.id)}>Eliminar</Button>
+                  <h2>{item.Tarea}</h2>
+                  <p>{item.Descripcion}</p>
+                  <Button onClick={() => eliminar(item.Id)}>Eliminar</Button>
                 </div>
               ))}
             </div>
