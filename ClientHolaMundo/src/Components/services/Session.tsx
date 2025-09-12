@@ -18,7 +18,7 @@ export default function Session() {
   const [isLoading, setIsLoading] = useState(false);
 
   // Obtener la ruta de donde venía el usuario antes del login
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/list";
 
   const logUsers = handleSubmit(async (data) => {
     setIsLoading(true);
