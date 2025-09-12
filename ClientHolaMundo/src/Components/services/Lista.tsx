@@ -186,7 +186,7 @@ export default function Lista() {
                     key={item.id}
                     className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border"
                   >
-                    <div className="flex-1">
+                    <div className="flex-1 d-flex flex-col">
                       <h2 className="font-semibold text-gray-900">{item.tarea}</h2>
                       <p className="text-sm text-gray-600">{item.descripcion}</p>
                     </div>
