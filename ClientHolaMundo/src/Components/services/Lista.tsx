@@ -29,7 +29,9 @@ export default function Lista() {
   const fetchData = useCallback(async () => {
     try {
       const response = await MiAxios.get("/api2/Lista/RecibirTareas");
-      console.log(response.data);
+      console.log("Datos recibidos del backend:", response.data);
+      console.log("Tipo de datos:", typeof response.data);
+      console.log("Es array:", Array.isArray(response.data));
       setLista(response.data);
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -175,16 +177,23 @@ export default function Lista() {
             <p className="text-gray-500 text-center py-4">No task found</p>
           ) : (
             <div className="space-y-2">
-              {lista.map((item: item) => (
-                <div
-                  key={item.Id}
-                  className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border"
-                >
-                  <h2>{item.Tarea}</h2>
-                  <p>{item.Descripcion}</p>
-                  <Button onClick={() => eliminar(item.Id)}>Eliminar</Button>
-                </div>
-              ))}
+              {lista.map((item: item) => {
+                console.log("Item actual:", item);
+                console.log("Tarea:", item.Tarea);
+                console.log("Descripcion:", item.Descripcion);
+                return (
+                  <div
+                    key={item.Id}
+                    className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border"
+                  >
+                    <div className="flex-1">
+                      <h2 className="font-semibold text-gray-900">{item.Tarea}</h2>
+                      <p className="text-sm text-gray-600">{item.Descripcion}</p>
+                    </div>
+                    <Button onClick={() => eliminar(item.Id)}>Eliminar</Button>
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>
